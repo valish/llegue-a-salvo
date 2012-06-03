@@ -1,11 +1,19 @@
 
-<p><%= link_to "Report Danger", 'reported_dangers/new' %></p>
-<p><%= link_to "Make Announcement", 'announcements/new' %></p>
+<div id="actions">
+	<%= link_to "Make Announcement", 'announcements/new', :class => "btn btn-primary" %>
+	<%= link_to "Report Danger", 'reported_dangers/new', :class => "btn btn-danger" %>
+	<%= link_to "Check-In", 'reported_dangers/new', :class => "btn btn-success" %>
+</div>
 
-<p><strong>Username</strong>: <%= current_user.username %></p>
+<ul id="announcements">
 
-<h4>Announcements:</h4>
-<% for announcement in @user.announcements %>
-	<p><%= announcement.content %><br/>
-		<%= announcement.created_at %></p>
-<% end %>
+	<h1><%= current_user.username %>'s Announcements:</h1>
+	<% for announcement in @user.announcements %>
+	<li class="announcement">
+			<div class="stream-element">
+				<span><%= announcement.content %></span><br />
+				<small>Created <%= announcement.created_at %></small>
+			</div>
+	<% end %>
+	
+</ul>

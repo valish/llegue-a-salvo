@@ -1,25 +1,28 @@
-<%= form_for(@reported_danger) do |f| %>
-  <% if @reported_danger.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@reported_danger.errors.count, "error") %> prohibited this reported_danger from being saved:</h2>
 
-      <ul>
-      <% @reported_danger.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div id="create_reported-danger">
+	<%= form_for(@reported_danger) do |f| %>
+	  <% if @reported_danger.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@reported_danger.errors.count, "error") %> prohibited this reported_danger from being saved:</h2>
+
+	      <ul>
+	      <% @reported_danger.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
 	
-	<p><%= f.label :location %>
-	<%= f.text_field :location %></p>
+		<p><%= f.label :location %>
+		<%= f.text_field :location %></p>
 	
-	<p><%= f.label :when %>
-	<%= f.date_select :when %></p>
+		<p><%= f.label :when %>
+		<%= f.date_select :when %></p>
 	
-	<p><%= f.label :description %>
-	<%= f.text_area :description %></p>
-  <div class="actions">
-    <%= f.submit "Report Danger" %>
-  </div>
-<% end %>
+		<p><%= f.label :description %>
+		<%= f.text_area :description, :class => "resize" %></p>
+	  <div class="actions">
+	    <%= f.submit "Report Danger" %>
+	  </div>
+	<% end %>
+</div>

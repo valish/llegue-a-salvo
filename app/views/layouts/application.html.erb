@@ -12,13 +12,32 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="container" class="container">
+    <div id="l-container" class="container">
       <header>
-        <%= render 'layouts/navigation' %>
-        <%= render 'layouts/messages' %>
+				<div class="wrap">
+      		<div id="logo">
+						<%= link_to image_tag("header-logo-en.gif"), root_path, :class => 'brand' %>
+					</div>
+					<div id="title">
+						<h1>Llegue a Salvo.</h1>
+					</div>
+					<div class="act-right">
+						<% if user_signed_in? %>
+					    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete', :class => "btn", :id => "log_in"  %>        
+					  <% else %>
+					    <%= link_to 'Log In', new_user_session_path, :class => "btn", :id => "log_in" %>  
+					  <% end %>
+					</div>
+				</div>
       </header>
-      <div id="main" role="main">
-        <%= yield %>
+      <div id="l-main" role="main">
+				<%= render 'layouts/navigation' %>
+<!--     <%= render 'layouts/messages' %> -->
+				<div id="wrap">
+					<div id="canvas">
+        		<%= yield %>
+					</div>
+				</div>
       </div>
       <footer>
       </footer>

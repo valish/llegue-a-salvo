@@ -1,5 +1,49 @@
-<h3>Home</h3>
 
-<% @reported_dangers.each do |reported_danger| %>
+
+		<div id="splash">
+			<!--<h1>En contacto, Fuera de peligro.</h1>-->
+			<div class="splash-col">
+				<div class="wrap">
+					<i class="icon-eye-open"></i>
+					<h2 class="col-title">Observe Dangers</h2>
+				</div>
+			</div>
+			<div class="splash-col">
+				<div class="wrap">
+					<i class="icon-warning-sign"></i>
+					<h2 class="col-title">Report Danger</h2>
+				</div>
+			</div>
+			<div class="splash-col">
+				<div class="wrap">
+					<i class="icon-check"></i>
+					<h2 class="col-title">Check-In</h2>
+				</div>
+			</div>
+		</div>
+	<div class="row">
+		<div id="overview">
+			<div class="wrap">
+				<h2>What is Llegue a Salvo?</h2>
+				<p>A tool that offers you a secure and anonymous way to let your loved ones know you are safe, and to report hazards or abuses that you know about as you make your journey. </p>
+				<p>To start, create your unique username and share it with your trusted network. You can then sign in and click on [ok icon], and when your loved ones sign in with the unique username, they can see when you checked in and were ‘OK’.</p>
+				<p>To report a hazard or abuse and help others to avoid dangers, click on [report hazard icon].</p>
+				<p>At anytime, you can click on [observe icon] to view all reported hazards or see them on a map. That way you can keep informed and stay safe along your journey.</p>
+			</div>
+		</div>
+		<div id="sign_up">
+			<h2>Get Started</h2>
+		</div>
+	</div>
+
+	<div id="reported_dangers">
+		<h2>Reported Dangers</h2>
+		<% @reported_dangers.each do |reported_danger| %>
+			<div class="stream-element">
+				"<strong><%= reported_danger.description %></strong>" in <%= reported_danger.location %>
+			</div>
+		<% end %>
+	</div>
+<!--<% @reported_dangers.each do |reported_danger| %>
 	<p><%= reported_danger.description %></p>
-<% end %>
+<% end %>-->

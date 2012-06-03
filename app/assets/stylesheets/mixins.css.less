@@ -7,6 +7,16 @@
   -moz-border-radius: @radius;
 }
 
+.fadeToWhite {
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+	
+}
 
 .dropdownMenuText {
 	font-size:12px;
@@ -240,7 +250,7 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#f9f9f9',GradientType=1 );
 }
 
-.inviteShadow {	
+.drop-shadow {	
 	-webkit-box-shadow: rgba(0,0,0,.3) 0px 1px 6px;
 	-moz-box-shadow: rgba(0,0,0,.3) 0px 1px 6px;
 	box-shadow: rgba(0,0,0,.3) 0px 1px 6px;
@@ -262,4 +272,15 @@
 	-webkit-box-shadow: inset 0px 1px 1px 1px rgba(0,0,0,.15);
 	-moz-box-shadow: inset 0px 1px 1px 1px rgba(0,0,0,.15);
 	box-shadow: inset 0px 1px 1px 1px rgba(0,0,0,.05);
+}
+
+.yellowGrad {
+	background: #ffff00;
+	background: -moz-linear-gradient(top, #ffff00 0%, #ffff2d 65%, #ffff70 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffff00), color-stop(65%,#ffff2d), color-stop(100%,#ffff70));
+	background: -webkit-linear-gradient(top, #ffff00 0%,#ffff2d 65%,#ffff70 100%);
+	background: -o-linear-gradient(top, #ffff00 0%,#ffff2d 65%,#ffff70 100%);
+	background: -ms-linear-gradient(top, #ffff00 0%,#ffff2d 65%,#ffff70 100%);
+	background: linear-gradient(top, #ffff00 0%,#ffff2d 65%,#ffff70 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff00', endColorstr='#ffff70',GradientType=0 );
 }

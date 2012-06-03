@@ -1,8 +1,9 @@
-<h1>New announcement</h1>
-
+<%= link_to 'Back', announcements_path, :class => "head-marg btn" %>
+<h1 class="head-marg">New announcement</h1>
+<div id="create_reported-danger">
 <%= form_for [@user, Announcement.new] do |f| %>
-	<%= f.text_area :content %>
+	<%= f.text_area :content, :class => "resize" %><br />
 	<%= f.submit %>
 <% end %>
+</div>
 
-<%= link_to 'Back', announcements_path %>
