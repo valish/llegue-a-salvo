@@ -1,0 +1,53 @@
+/*
+ *= depend_on "base.css.less"
+ *= depend_on "layout.css.less"
+ *= depend_on "font-awesome.css.less"
+ *= depend_on "bootstrap.css"
+ *= require_self
+ *= require_tree .
+*/
+
+@import "base.css.less";
+@import "mixins.css.less";
+
+
+/* Core
+==========================================================*/
+
+#l-container {
+	margin:55px 28px;
+	width:100%;
+}
+
+
+input[type="text"],
+input[type="search"] { outline:0; padding:6px; }
+
+input[type="text"] { border:1px solid #d3d3d3; .border-radius; }
+
+.module {
+	border:1px solid rgba(1,1,1,.2);
+	.border-radius;
+	width:100%;
+	h4 {
+		color:#a7a7a7;
+		margin:9px 0;
+		font-size:11px;
+		font-weight:normal;
+		text-shadow:0 1px #fff;
+		text-transform:uppercase;
+	}
+	i { padding-right:5px; }
+	.content-wrap {
+		margin:0 2%;
+	}
+}
+
+
+
+
+
+
+
+
+
