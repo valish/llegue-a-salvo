@@ -1,9 +1,8 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h4>Users</h4>
 <ul class="users">
   <% @users.each do |user| %>
     <li>
-      <%= link_to user.name, user %> 
+      <%= link_to user.username, user %> 
     </li>
   <% end %>
 </ul>

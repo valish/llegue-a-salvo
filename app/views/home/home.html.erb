@@ -1,1 +1,11 @@
-<p><%= current_user.username %></p>
+
+<p><%= link_to "Report Danger", 'reported_dangers/new' %></p>
+<p><%= link_to "Make Announcement", 'announcements/new' %></p>
+
+<p><strong>Username</strong>: <%= current_user.username %></p>
+
+<h4>Announcements:</h4>
+<% for announcement in @user.announcements %>
+	<p><%= announcement.content %><br/>
+		<%= announcement.created_at %></p>
+<% end %>

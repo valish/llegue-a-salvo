@@ -1,9 +1,9 @@
-class UpdatesController < ApplicationController
+class AnnouncementsController < ApplicationController
   # GET /updates
   # GET /updates.json
   def index
     @updates = Update.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @updates }
@@ -13,19 +13,13 @@ class UpdatesController < ApplicationController
   # GET /updates/1
   # GET /updates/1.json
   def show
-    @update = Update.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @update }
-    end
   end
 
   # GET /updates/new
   # GET /updates/new.json
   def new
     @update = Update.new
-
+    @user = current_user
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @update }
@@ -40,7 +34,8 @@ class UpdatesController < ApplicationController
   # POST /updates
   # POST /updates.json
   def create
-    @update = Update.new(params[:update])
+    @user = current_user
+    @update = @user.updates.create!(params[:update])
 
     respond_to do |format|
       if @update.save
@@ -53,31 +48,11 @@ class UpdatesController < ApplicationController
     end
   end
 
-  # PUT /updates/1
-  # PUT /updates/1.json
-  def update
-    @update = Update.find(params[:id])
-
-    respond_to do |format|
-      if @update.update_attributes(params[:update])
-        format.html { redirect_to @update, notice: 'Update was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @update.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # DELETE /updates/1
   # DELETE /updates/1.json
   def destroy
     @update = Update.find(params[:id])
     @update.destroy
-
-    respond_to do |format|
-      format.html { redirect_to updates_url }
-      format.json { head :no_content }
-    end
   end
 end

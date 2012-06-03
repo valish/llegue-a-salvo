@@ -1,0 +1,22 @@
+<h1>Listing reported_dangers</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reported_dangers.each do |reported_danger| %>
+
+  <tr>
+    <td><%= link_to 'Show', reported_danger %></td>
+    <td><%= link_to 'Edit', edit_reported_danger_path(reported_danger) %></td>
+    <td><%= link_to 'Destroy', reported_danger, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reported danger', new_reported_danger_path %>

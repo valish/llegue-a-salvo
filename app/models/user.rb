@@ -8,7 +8,7 @@ class User
   
   ## Relationships  
   embeds_one :expedition
-  embeds_many :updates
+  embeds_many :announcements
   has_and_belongs_to_many :reported_dangers
   
   # Include default devise modules. Others available are:

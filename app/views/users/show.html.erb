@@ -1,4 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<h3><%= @user.username %></h3>
+
+<h4>Announcements:</h4>
+<% for announcement in @user.announcements %>
+	<p><%= announcement.content %><br/>
+		<%= announcement.created_at %></p>
+<% end %>
+
